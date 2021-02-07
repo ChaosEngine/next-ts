@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+//import Image from 'next/image'
 import Layout from '../components/Layout'
 
 const AboutPage = () => (
@@ -8,7 +8,7 @@ const AboutPage = () => (
     <p>This is the about page</p>
     <div>
       Avatar profile Image
-      <Image
+      <img
         src="/images/profile.jpg"
         width="200px"
         height="150px"
