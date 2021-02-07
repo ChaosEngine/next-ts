@@ -8,6 +8,8 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8b2b6c18-c8ee-4643-b5bc-5b4598fee7b0/deploy-status)](https://app.netlify.com/sites/chaosengine-next-ts/deploys)
+
 ## How to use it?
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
