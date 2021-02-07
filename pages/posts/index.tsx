@@ -2,8 +2,17 @@ import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { getSortedPostsData } from '../../lib/markdowns'
 
+type PostData = {
+	id: string;
+	date: any;
+	title: any;
+};
+type Props = {
+	allPostsData: PostData[]
+};
+
 export async function getStaticProps() {
-	const allPostsData = getSortedPostsData()
+	const allPostsData: PostData[] = getSortedPostsData()
 
 	return {
 		props: {
@@ -11,15 +20,6 @@ export async function getStaticProps() {
 		}
 	}
 }
-
-type PostData = {
-	id: string;
-	title: any;
-	date: any;
-};
-type Props = {
-	allPostsData: PostData[]
-};
 
 const html = ({ allPostsData }: Props) => {
 	// console.log('aaa', props);
@@ -34,15 +34,20 @@ const html = ({ allPostsData }: Props) => {
 			</h1>
 
 			<section>
-				<h2>Blog</h2>
+				<h2>Blogs</h2>
 				<ul>
 					{allPostsData.map(({ id, title, date }) => (
 						<li key={id}>
-							{title}
-							<br />
-							{id}
-							<br />
-							{date}
+							<p>
+								<strong>title:</strong> {title}
+								<br />
+								<strong>id: </strong>
+								<Link href={`/posts/${id}`}>
+									<a>{id}</a>
+								</Link>
+								<br />
+								<strong>date:</strong> {date}
+							</p>
 						</li>
 					))}
 				</ul>
