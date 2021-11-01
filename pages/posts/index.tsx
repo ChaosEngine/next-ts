@@ -4,8 +4,8 @@ import { getSortedPostsData } from '../../lib/markdowns'
 
 type PostData = {
 	id: string;
-	date: any;
-	title: any;
+	date: string;
+	title: string;
 };
 type Props = {
 	allPostsData: PostData[]
