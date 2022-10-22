@@ -4,8 +4,8 @@ import { getAllPostIds, getPostData } from '../../lib/markdowns'
 type Props = {
 	postData: {
 		id: string;
-		date: any;
-		title: any;
+		date: Date;
+		title: string;
 	}
 };
 
@@ -36,12 +36,14 @@ export async function getStaticProps({ params }: Path) {
 
 export default function Post({ postData }: Props) {
 	return (
-		<Layout>
-			{postData.title}
-			<br />
-			{postData.id}
-			<br />
-			{postData.date}
+		<Layout title={postData.title}>
+			<>
+				{postData.title}
+				<br />
+				{postData.id}
+				<br />
+				{postData.date}
+			</>
 		</Layout>
 	)
 }

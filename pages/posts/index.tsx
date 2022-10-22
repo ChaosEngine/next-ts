@@ -22,7 +22,7 @@ export async function getStaticProps() {
 }
 
 const html = ({ allPostsData }: Props) => {
-	// console.log('aaa', props);
+	// console.log('aaa', allPostsData);
 
 	return (
 		<Layout title="Posts">

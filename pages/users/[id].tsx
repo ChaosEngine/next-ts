@@ -6,14 +6,15 @@ import Layout from '../../components/Layout'
 import ListDetail from '../../components/ListDetail'
 
 type Props = {
-  item?: User
+  item?: User,
+  allUsers?: User[],
   errors?: string
 }
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const StaticPropsDetail = ({ item, allUsers, errors }: Props) => {
   if (errors) {
     return (
-      <Layout title="Error | Next.js + TypeScript Example">
+      <Layout title="Error">
         <p>
           <span style={{ color: 'red' }}>Error:</span> {errors}
         </p>
@@ -23,11 +24,21 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
 
   return (
     <Layout
-      title={`${
-        item ? item.name : 'User Detail'
-      } | Next.js + TypeScript Example`}
+      title={`${item ? item.name : 'User Detail'}`}
     >
-      {item && <ListDetail item={item} />}
+      
+      {item && allUsers &&
+        <ListDetail item={item}
+          prev={
+            allUsers.findIndex(data => data.id === item.id) > 0 ?
+            allUsers[allUsers.findIndex(data => data.id === item.id) - 1] : undefined
+          }
+          next={
+            allUsers.findIndex(data => data.id === item.id) < (allUsers.length - 1) ?
+            allUsers[allUsers.findIndex(data => data.id === item.id) + 1] : undefined
+          }
+        />}
+        
     </Layout>
   )
 }
@@ -54,8 +65,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const item = sampleUserData.find((data) => data.id === Number(id))
     // By returning { props: item }, the StaticPropsDetail component
     // will receive `item` as a prop at build time
-    return { props: { item } }
-  } catch (err:any) {
+    return { props: { item, allUsers: sampleUserData } }
+  } catch (err: any) {
     return { props: { errors: err.message } }
   }
 }
