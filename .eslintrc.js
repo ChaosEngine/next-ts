@@ -6,6 +6,7 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
+        'plugin:@next/next/recommended',
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
@@ -19,7 +20,7 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
     ],
     "rules": {
         // suppress errors for missing 'import React' in files
