@@ -19,19 +19,19 @@ const Layout = ({ children, title = '' }: Props) => (
     <header>
       <nav>
         <Link href="/">
-          Home
+          <a>Home</a>
         </Link>{' '}
         |{' '}
         <Link href="/about">
-          About
+          <a>About</a>
         </Link>{' '}
         |{' '}
         <Link href="/users">
-          Users List
+          <a>Users List</a>
         </Link>{' '}
         |{' '}
         <Link href="/posts">
-          Posts
+          <a>Posts</a>
         </Link>{' '}
         |{' '}
         <Link href="/api/users">
