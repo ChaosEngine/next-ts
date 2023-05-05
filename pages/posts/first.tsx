@@ -13,7 +13,7 @@ const FirstPost = () => {
 			</p>
 			<h2>
 				<Link href="/">
-					<a>Back to home</a>
+					Back to home
 				</Link>
 			</h2>
 		</Layout>

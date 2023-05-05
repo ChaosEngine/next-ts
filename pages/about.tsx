@@ -18,7 +18,7 @@ const AboutPage = () => (
     </div>
     <p>
       <Link href="/">
-        <a>Go home</a>
+        Go home
       </Link>
     </p>
   </Layout>

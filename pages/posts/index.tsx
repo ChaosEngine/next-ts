@@ -29,7 +29,7 @@ const html = ({ allPostsData }: Props) => {
 			<h1 className="title">
 				Read{' '}
 				<Link href="/posts/first">
-					<a>this page!</a>
+					this page!
 				</Link>
 			</h1>
 
@@ -43,7 +43,7 @@ const html = ({ allPostsData }: Props) => {
 								<br />
 								<strong>id: </strong>
 								<Link href={`/posts/${id}`}>
-									<a>{id}</a>
+									{id}
 								</Link>
 								<br />
 								<strong>date:</strong> {date}
