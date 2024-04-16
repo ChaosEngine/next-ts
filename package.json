@@ -10,17 +10,17 @@
   },
   "dependencies": {
     "gray-matter": "4.0.3",
-    "next": "14.1.4",
+    "next": "14.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "14.1.4",
+    "@next/eslint-plugin-next": "14.2.1",
     "@types/node": "20.12.7",
-    "@types/react": "18.2.75",
-    "@types/react-dom": "18.2.24",
-    "@typescript-eslint/eslint-plugin": "7.6.0",
-    "@typescript-eslint/parser": "7.6.0",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
     "eslint": "9.0.0",
     "eslint-plugin-react": "7.34.1",
     "typescript": "5.4.5"
