@@ -42,7 +42,7 @@ export default function Post({ postData }: Props) {
 				<br />
 				{postData.id}
 				<br />
-				{postData.date}
+				{postData.date.toString()}
 			</>
 		</Layout>
 	)
