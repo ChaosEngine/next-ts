@@ -10,46 +10,58 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+	allConfig: js.configs.all
 });
 
-export default [...compat.extends(
-    "eslint:recommended",
-    "plugin:@next/next/recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-), {
-    plugins: {
-        react,
-        "@typescript-eslint": typescriptEslint,
-    },
+export default [
+	{
+		ignores: ["**/out", ".next/*"]
+		// ,files: ["**/*.{js,mjs,cjs,ts}"]
+	},
+	...compat.extends(
+		"eslint:recommended",
+		"plugin:@next/next/recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+	), {
+		plugins: {
+			react,
+			"@typescript-eslint": typescriptEslint,
+		},
 
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node,
-        },
+		languageOptions: {
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
 
-        parser: tsParser,
-        ecmaVersion: 12,
-        sourceType: "module",
+			parser: tsParser,
+			ecmaVersion: 12,
+			sourceType: "module",
 
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
-            },
-        },
-    },
+			parserOptions: {
+				ecmaFeatures: {
+					jsx: true,
+				},
+			},
+		},
 
-    rules: {
-        "react/react-in-jsx-scope": "off",
+		rules: {
+			"react/react-in-jsx-scope": "off",
 
-        "react/jsx-filename-extension": [1, {
-            extensions: [".js", ".jsx", ".ts", ".tsx"],
-        }],
+			"react/jsx-filename-extension": [1, {
+				extensions: [".js", ".jsx", ".ts", ".tsx"],
+			}],
 
-        "@typescript-eslint/no-explicit-any": "off",
-    },
-}];
+			"@typescript-eslint/no-explicit-any": "off",
+		},
+		settings: {
+			react: {
+				version: "detect", // React version. "detect" automatically picks the version you have installed.
+				// You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+				// Defaults to the "defaultVersion" setting and warns if missing, and to "detect" in the future
+			}
+		}
+	}];

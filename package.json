@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "scripts": {
     "dev": "next",
+		"lint": "eslint .",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
