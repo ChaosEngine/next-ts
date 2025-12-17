@@ -2,12 +2,12 @@
   "name": "with-typescript",
   "version": "1.0.1",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "bun --bun next dev --turbopack",
     "lint": "eslint .",
-    "build": "next build",
-    "start": "next start",
+    "build": "bun --bun next build",
+    "start": "bun --bun next start",
     "type-check": "tsc",
-    "export": "npm run build"
+    "export": "bun run build"
   },
   "dependencies": {
     "gray-matter": "4.0.3",
