@@ -1,5 +1,6 @@
 import react from "eslint-plugin-react";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import nextPlugin from "@next/eslint-plugin-next";
 import globals from "globals";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -22,13 +23,15 @@ export default [
 	},
 	...compat.extends(
 		"eslint:recommended",
-		"plugin:@next/next/recommended",
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
-	), {
+	),
+	{
+		files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
 		plugins: {
 			react,
 			"@typescript-eslint": typescriptEslint,
+			"@next/next": nextPlugin,
 		},
 
 		languageOptions: {
@@ -56,6 +59,10 @@ export default [
 			}],
 
 			"@typescript-eslint/no-explicit-any": "off",
+
+			// Next.js recommended rules
+			"@next/next/no-html-link-for-pages": "off",
+			"@next/next/no-img-element": "off",
 		},
 		settings: {
 			react: {
@@ -64,4 +71,5 @@ export default [
 				// Defaults to the "defaultVersion" setting and warns if missing, and to "detect" in the future
 			}
 		}
-	}];
+	}
+];
