@@ -1,7 +1,7 @@
 // import * as React from 'react'
 import Link from 'next/link'
 
-import { User } from '../interfaces'
+import type { User } from '../interfaces'
 
 type ListDetailProps = {
   item: User,
