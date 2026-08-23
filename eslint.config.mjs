@@ -1,4 +1,3 @@
-import react from "eslint-plugin-react";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import nextPlugin from "@next/eslint-plugin-next";
 import globals from "globals";
@@ -19,17 +18,14 @@ const compat = new FlatCompat({
 export default [
 	{
 		ignores: ["**/out", ".next/*"]
-		// ,files: ["**/*.{js,mjs,cjs,ts}"]
 	},
 	...compat.extends(
 		"eslint:recommended",
-		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
 	),
 	{
 		files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
 		plugins: {
-			react,
 			"@typescript-eslint": typescriptEslint,
 			"@next/next": nextPlugin,
 		},
@@ -52,24 +48,11 @@ export default [
 		},
 
 		rules: {
-			"react/react-in-jsx-scope": "off",
-
-			"react/jsx-filename-extension": [1, {
-				extensions: [".js", ".jsx", ".ts", ".tsx"],
-			}],
-
 			"@typescript-eslint/no-explicit-any": "off",
 
 			// Next.js recommended rules
 			"@next/next/no-html-link-for-pages": "off",
 			"@next/next/no-img-element": "off",
 		},
-		settings: {
-			react: {
-				version: "detect", // React version. "detect" automatically picks the version you have installed.
-				// You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-				// Defaults to the "defaultVersion" setting and warns if missing, and to "detect" in the future
-			}
-		}
 	}
 ];
